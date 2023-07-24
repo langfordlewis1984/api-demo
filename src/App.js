@@ -37,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <h1>City Explorer</h1>
+      <article className="map">{map && <img src={map} alt="map" />}</article>
       <form className="form" onSubmit={getLocation}>
         <input
           className="input"
@@ -49,15 +50,14 @@ function App() {
           Explore!
         </button>
       </form>
+      <p className="co-ords-title">LOCATION NAME</p>
+      <p className="place-name">{location.display_name}</p>
       <div className="place-name-container">
-        <p className="co-ords-title">LOCATION NAME</p>
-        <p className="place-name">{location.display_name}</p>
         <p className="co-ords-title">LONGITUDE</p>
         <p className="co-ords">{location.lat}</p>
         <p className="co-ords-title">LATIITUDE</p>
         <p className="co-ords">{location.lon}</p>
       </div>
-      <article className="map">{map && <img src={map} alt="map" />}</article>
     </div>
   );
 }
